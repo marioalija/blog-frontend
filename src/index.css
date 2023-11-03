@@ -6,15 +6,23 @@ body {
 }
 
 h1{
-  color: crimson;
+  color:azure;
 }
 
-h1 title{
-  
+h2{
+  color:azure
+}
+
+h3{
+  color: crimson;
+}
+h3 a:hover{
+  background-color: rgb(17, 81, 81);
+  border-radius: .2em;
 }
 /*  */
 header {
-  background-color:rgb(110, 25, 42) ;
+  background-color:rgb(34, 3, 10) ;
   padding: 25px;
   font-size: 33px;
 }
@@ -23,11 +31,12 @@ header a{
   color:azure
 }
 
-
-/*  */
-h2{
-  color: azure;
+header a:hover{
+  background-color: crimson;
+  border-radius: .2em;
 }
+/*  */
+
 button {
   color: crimson;
   padding: 10px;

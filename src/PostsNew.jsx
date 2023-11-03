@@ -3,13 +3,13 @@ export function PostsNew() {
     <div id="posts-new">
       <h1>New post</h1>
       <div>
-        Title: <input type="text" />
+        <h3>Title:</h3> <input type="text" />
       </div>
       <div>
-        Body: <input type="text" />
+        <h3>Body:</h3> <input type="text" />
       </div>
       <div>
-        Image: <input type="text" />
+        <h3>Image:</h3> <input type="text" />
       </div>
       <div>
         <button>Add More Pics</button>
