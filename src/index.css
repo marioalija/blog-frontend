@@ -1,7 +1,45 @@
-#posts-index img {
-  width: 350px;
+body {
+  margin: 0;
+  font-family: 'Nosifer', sans-serif;
+  text-align: center;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/013/726/849/large/danny-moll-csv-belmont-home-ruins.jpg?1540873016");
 }
 
+h1{
+  color: crimson;
+}
+
+h1 title{
+  
+}
+/*  */
+header {
+  background-color:rgb(110, 25, 42) ;
+  padding: 25px;
+  font-size: 33px;
+}
+/*  */
+header a{
+  color:azure
+}
+
+
+/*  */
+h2{
+  color: azure;
+}
+button {
+  color: crimson;
+  padding: 10px;
+  font-size:medium;
+  background-color: black;
+}
+/*  */
+.post img{
+  width: 100%;
+  height: 300px;
+  object-fit:cover;
+}
 html {
   scroll-behavior: smooth;
 }

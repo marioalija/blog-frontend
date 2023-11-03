@@ -5,16 +5,18 @@ export function PostsIndex(props) {
     <div id="posts-index">
       <h1>All posts</h1>
       {/* loop of defined recipe data props from the parent component */}
-      {props.posts.map((post) => (
-        <div key={post.id}>
-          <p>-{post.id}-</p>
-          <h2>{post.title}</h2>
-          <img src={post.image} alt="puppies and kittens" />
-          <div>
-            <button>More pictures</button>
+      <div className="posts">
+        {props.posts.map((post) => (
+          <div key={post.id} className="post">
+            <p>-{post.id}-</p>
+            <h2>{post.title}</h2>
+            <img src={post.image} alt="" />
+            <div>
+              <button>More pictures</button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

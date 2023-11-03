@@ -5,21 +5,21 @@ export function Content() {
   let posts = [
     {
       id: 1,
-      title: "Cute little puppies",
-      body: "Adorable puppies",
-      image: "https://wallpapers.com/images/hd/cute-little-puppies-jggd1xqev9439k6k.jpg",
+      title: "The Castle",
+      body: "",
+      image: "https://i.pinimg.com/736x/d0/89/5c/d0895c30ba90407f9c78aaf9b260eea7.jpg",
     },
     {
       id: 2,
-      title: "Cute little kittens",
-      body: "Adorable kittens",
-      image: "https://i.ytimg.com/vi/kVDPd5eZn2A/maxresdefault.jpg",
+      title: "Dracula",
+      body: "",
+      image: "https://t4.ftcdn.net/jpg/05/68/98/19/360_F_568981938_R87rarBphgiNJ4Kiqj0IQM6aAFgA5VWX.jpg",
     },
     {
       id: 3,
-      title: "Cute little puppies and kittens",
-      body: "Adorable puppies and kittens",
-      image: "https://i.stack.imgur.com/bWvHV.jpg",
+      title: "Belmont Family Tree",
+      body: "",
+      image: "https://wallpapers.com/images/featured/castlevania-9ym4u6d7uyfye4kd.jpg",
     },
   ];
   return (
