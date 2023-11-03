@@ -1,3 +1,5 @@
+import "./App.css";
+
 function Header() {
   return (
     <header>
@@ -19,39 +21,30 @@ function PostsNew() {
       <div>
         Image: <input type="text" />
       </div>
+      <div>
+        <button>Add More Pics</button>
+      </div>
     </div>
   );
 }
 
-function PostsIndex() {
+function PostsIndex(props) {
+  console.log(props);
+
   return (
     <div id="posts-index">
       <h1>All posts</h1>
-      <div>
-        <h2>Cute little puppies</h2>
-        <p>Adorable puppies</p>
-      </div>
-      <div>
-        <img
-          src="https://wallpapers.com/images/hd/cute-little-puppies-jggd1xqev9439k6k.jpg"
-          alt="Cute little puppies"
-        />
-      </div>
-      <div>
-        <h2>Cute little kittens</h2>
-        <p>Adorable kittens</p>
-      </div>
-
-      <div>
-        <img src="https://i.ytimg.com/vi/kVDPd5eZn2A/maxresdefault.jpg" alt="Cute little kittens" />
-      </div>
-      <div>
-        <h2>Cute little puppies and kittens</h2>
-        <p>Adorable puppies and kittens</p>
-      </div>
-      <div>
-        <img src="https://i.stack.imgur.com/bWvHV.jpg" alt="Cute little puppies and kittens" />
-      </div>
+      {/* loop of defined recipe data props from the parent component */}
+      {props.posts.map((post) => (
+        <div key={post.id}>
+          <p>-{post.id}-</p>
+          <h2>{post.title}</h2>
+          <img src={post.image} alt="puppies and kittens" />
+          <div>
+            <button>More pictures</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -60,17 +53,37 @@ function Footer() {
   return (
     <div>
       <footer>
-        <p>Copyright 20XX</p>
+        <p>Copyright 2023</p>
       </footer>
     </div>
   );
 }
 
 function Content() {
+  let posts = [
+    {
+      id: 1,
+      title: "Cute little puppies",
+      body: "Adorable puppies",
+      image: "https://wallpapers.com/images/hd/cute-little-puppies-jggd1xqev9439k6k.jpg",
+    },
+    {
+      id: 2,
+      title: "Cute little kittens",
+      body: "Adorable kittens",
+      image: "https://i.ytimg.com/vi/kVDPd5eZn2A/maxresdefault.jpg",
+    },
+    {
+      id: 3,
+      title: "Cute little puppies and kittens",
+      body: "Adorable puppies and kittens",
+      image: "https://i.stack.imgur.com/bWvHV.jpg",
+    },
+  ];
   return (
     <div>
       <PostsNew />
-      <PostsIndex />
+      <PostsIndex posts={posts} />
     </div>
   );
 }
