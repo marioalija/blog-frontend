@@ -2,8 +2,18 @@ import { useState } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
+import axios from "axios";
 
 export function Content() {
+  const [posts, setPosts] = useState([]);
+
+  const handleIndexPosts = () => {
+    axios.get("http://localhost:3000/posts.json").then((response) => {
+      console.log(response.data);
+      setPosts(response.data);
+    });
+  };
+
   //giving react the variable and the ability to set that variable
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
@@ -16,29 +26,10 @@ export function Content() {
     setIsPostsShowVisible(false);
   };
 
-  let posts = [
-    {
-      id: 1,
-      title: "The Castle",
-      body: "",
-      image: "https://i.pinimg.com/736x/d0/89/5c/d0895c30ba90407f9c78aaf9b260eea7.jpg",
-    },
-    {
-      id: 2,
-      title: "Dracula",
-      body: "",
-      image: "https://t4.ftcdn.net/jpg/05/68/98/19/360_F_568981938_R87rarBphgiNJ4Kiqj0IQM6aAFgA5VWX.jpg",
-    },
-    {
-      id: 3,
-      title: "Belmont Family Tree",
-      body: "",
-      image: "https://wallpapers.com/images/featured/castlevania-9ym4u6d7uyfye4kd.jpg",
-    },
-  ];
   return (
     <div>
       <PostsNew />
+      <button onClick={handleIndexPosts}>Load Posts</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <p>Welcome All</p>

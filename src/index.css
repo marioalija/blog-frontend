@@ -50,9 +50,9 @@ button {
 }
 /*  */
 .post img{
-  width: 90%;
-  height: 1000px;
-  object-fit:cover;
+  width: 100%;
+  height: 900px;
+  object-fit:fill,scale-down;
 }
 html {
   scroll-behavior: smooth;
