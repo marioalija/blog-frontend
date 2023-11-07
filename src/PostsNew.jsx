@@ -12,7 +12,7 @@ export function PostsNew() {
         Image: <input type="text" />
       </div>
       <div>
-        <button>Add More Pics</button>
+        <button>Add New Posts</button>
       </div>
     </div>
   );
