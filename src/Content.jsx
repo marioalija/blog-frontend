@@ -27,8 +27,8 @@ export function Content() {
     <div>
       <PostsNew />
       <PostsIndex posts={posts} />
-      <Modal show={true}>
-        <p>TEST</p>
+      <Modal show={false}>
+        <p>Welcome All</p>
       </Modal>
     </div>
   );

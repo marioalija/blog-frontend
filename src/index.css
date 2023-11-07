@@ -5,6 +5,10 @@ body {
   background-image: url("https://cdnb.artstation.com/p/assets/images/images/013/726/849/large/danny-moll-csv-belmont-home-ruins.jpg?1540873016");
 }
 
+.search{
+  color: azure;
+}
+
 h1{
   color:azure;
 }
@@ -46,8 +50,8 @@ button {
 }
 /*  */
 .post img{
-  width: 100%;
-  height: 300px;
+  width: 90%;
+  height: 1000px;
   object-fit:cover;
 }
 html {
