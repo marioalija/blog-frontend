@@ -1,8 +1,21 @@
+import { useState } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 
 export function Content() {
+  //giving react the variable and the ability to set that variable
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+
+  //a function to toggle modal show on
+  const handleShowPost = () => {
+    setIsPostsShowVisible(true);
+  };
+  //a function to toggle close
+  const handleClose = () => {
+    setIsPostsShowVisible(false);
+  };
+
   let posts = [
     {
       id: 1,
@@ -26,8 +39,8 @@ export function Content() {
   return (
     <div>
       <PostsNew />
-      <PostsIndex posts={posts} />
-      <Modal show={false}>
+      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+      <Modal show={isPostsShowVisible} onClose={handleClose}>
         <p>Welcome All</p>
       </Modal>
     </div>
