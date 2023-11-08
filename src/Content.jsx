@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
+// imported posts show component
+import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import axios from "axios";
 
@@ -36,14 +38,8 @@ export function Content() {
       <PostsNew />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <div className="information">
-          <h2>Title: {currentPost.title}</h2>
-          <p>id: {currentPost.id}</p>
-          <p>
-            Img: <img src={currentPost.image} alt="" />
-          </p>
-          {/* <h2>Body: {currentPost.body}</h2> */}
-        </div>
+        {/* replaced data with a component */}
+        <PostsShow post={currentPost} />
       </Modal>
     </div>
   );
