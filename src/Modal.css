@@ -10,8 +10,9 @@
 }
 
 .modal-main {
+  color: crimson;
   position:fixed;
-  background: white;
+  background: gray;
   width: 80%;
   height: auto;
   top:50%;
@@ -27,4 +28,8 @@
   position: absolute;
   top: 0em; 
   right: 0.2em;
+}
+
+.information {
+  color: rgb(9, 9, 10);
 }

@@ -6,6 +6,8 @@ import axios from "axios";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
+  // a function to make web request to index recipe data
+  const [currentPost, setCurrentPost] = useState({});
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
@@ -18,8 +20,9 @@ export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
   //a function to toggle modal show on
-  const handleShowPost = () => {
+  const handleShowPost = (post) => {
     setIsPostsShowVisible(true);
+    setCurrentPost(post);
   };
   //a function to toggle close
   const handleClose = () => {
@@ -31,10 +34,16 @@ export function Content() {
   return (
     <div>
       <PostsNew />
-      {/* <button onClick={handleIndexPosts}>Load Posts</button> */}
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <p>Welcome All</p>
+        <div className="information">
+          <h2>Title: {currentPost.title}</h2>
+          <p>id: {currentPost.id}</p>
+          <p>
+            Img: <img src={currentPost.image} alt="" />
+          </p>
+          {/* <h2>Body: {currentPost.body}</h2> */}
+        </div>
       </Modal>
     </div>
   );
