@@ -4,7 +4,7 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            My Blog
           </a>
           <button
             className="navbar-toggler"
@@ -61,7 +61,7 @@ export function Header() {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
+                <a className="nav-link disabled"></a>
               </li>
             </ul>
             <form className="d-flex" role="search">

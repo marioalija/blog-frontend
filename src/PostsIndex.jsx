@@ -3,17 +3,18 @@ export function PostsIndex(props) {
   console.log(props);
 
   return (
-    <div id="posts-index">
-      <h1>All posts</h1>
-      {/* loop of defined recipe data props from the parent component */}
-      <div className="posts">
+    <div>
+      <h1>All Posts</h1>
+      <div className="row row-cols-1 row-cols-md-2 g-4">
         {props.posts.map((post) => (
-          <div key={post.id} className="post">
-            <p>-{post.id}-</p>
-            <h2>{post.title}</h2>
-            <img src={post.image} alt="" />
-            <div>
-              <button onClick={() => props.onShowPost(post)}>More info</button>
+          <div key={post.id} className="col">
+            <div className="card">
+              <img src={post.image} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">{post.title}</h5>
+                <p className="card-text">{post.body}</p>
+                <button onClick={() => props.onShowPost(post)}>More info</button>
+              </div>
             </div>
           </div>
         ))}
@@ -21,3 +22,17 @@ export function PostsIndex(props) {
     </div>
   );
 }
+
+//   <div id="posts-index">
+// <div className="posts">
+//   {props.posts.map((post) => (
+//     <div key={post.id} className="post">
+//       <p>-{post.id}-</p>
+//       <h2>{post.title}</h2>
+//       <img src={post.image} alt="" />
+//       <div>
+//         <button onClick={() => props.onShowPost(post)}>More info</button>
+//       </div>
+//     </div>
+//   ))}
+// </div>
