@@ -53,6 +53,14 @@ export function Content() {
     });
   };
 
+  const handleDestroyPost = (post) => {
+    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+      setPosts(posts.filter((p) => p.id !== post.id));
+      console.log(response);
+      handleClose();
+    });
+  };
+
   // react hook that calls a function on a page load ONCE
   useEffect(handleIndexPosts, []);
 
@@ -62,7 +70,7 @@ export function Content() {
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         {/* replaced data with a component */}
-        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
     </div>
   );

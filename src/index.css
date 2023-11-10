@@ -4,8 +4,10 @@ img{
 }
 
 body {
-  background-image: url(https://images4.alphacoders.com/133/1331291.png);
-  object-fit: cover;
+  background-image: url(https://cdn.pixabay.com/photo/2019/05/27/14/41/background-4232859_1280.png);
 }
 
 
+body h1 {
+  color: rgb(138, 215, 215);
+}

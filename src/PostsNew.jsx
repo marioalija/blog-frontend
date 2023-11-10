@@ -8,7 +8,7 @@ export function PostsNew(props) {
   };
   return (
     <div id="posts-new">
-      <h1>New post</h1>
+      <h1>Stewie Griffin</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="formGroupExampleInput" className="form-label">
