@@ -2,3 +2,10 @@ img{
   height: 400px;
   object-fit:contain;
 }
+
+body {
+  background-image: url(https://images4.alphacoders.com/133/1331291.png);
+  object-fit: cover;
+}
+
+
