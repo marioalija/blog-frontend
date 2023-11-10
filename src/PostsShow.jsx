@@ -1,14 +1,9 @@
-import axios from "axios";
-//create a component to hold recipe show functionality
-
 export function PostsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.patch(`http://localhost:3000/posts/${props.post.id}.json`, params).then((response) => {
-      console.log(response);
-      event.target.reset();
-    });
+    props.onUpdatePost(props.post.id, params);
+    event.target.reset();
   };
 
   return (

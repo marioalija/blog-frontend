@@ -37,6 +37,22 @@ export function Content() {
     });
   };
 
+  const handleUpdatePost = (id, params) => {
+    axios.patch(`http://localhost:3000/posts/${id}.json`, params).then((response) => {
+      setPosts(
+        posts.map((post) => {
+          if (post.id === response.data.id) {
+            return response.data;
+          } else {
+            return post;
+          }
+        })
+      );
+      setCurrentPost(response.data);
+      setIsPostsShowVisible(false);
+    });
+  };
+
   // react hook that calls a function on a page load ONCE
   useEffect(handleIndexPosts, []);
 
@@ -46,7 +62,7 @@ export function Content() {
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         {/* replaced data with a component */}
-        <PostsShow post={currentPost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
       </Modal>
     </div>
   );
