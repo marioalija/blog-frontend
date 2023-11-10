@@ -22,7 +22,7 @@ export function PostsShow(props) {
 
       <form onSubmit={handleSubmit}>
         <div>
-          Title: <input defaultValue={props.post.tittle} name="title" type="text" />
+          Title: <input defaultValue={props.post.title} name="title" type="text" />
         </div>
         <div>
           Id: <input defaultValue={props.post.id} name="id" type="text" />
