@@ -5,6 +5,8 @@ import { PostsNew } from "./PostsNew";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import axios from "axios";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -66,6 +68,8 @@ export function Content() {
 
   return (
     <div className="container">
+      <Signup />
+      <Login />
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
