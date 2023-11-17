@@ -9,6 +9,7 @@ import { Modal } from "./Modal";
 import axios from "axios";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { RecipesShowPage } from "./PostsShowPage";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -76,6 +77,7 @@ export function Content() {
         <Route path="/login" element={<Login />} />
         <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
         <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
+        <Route path="/recipes/:id" element={<RecipesShowPage />} />
       </Routes>
 
       <h1>WELCOME TO THE STEWIE GRIFFIN SHOW</h1>

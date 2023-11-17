@@ -44,6 +44,7 @@ export function Header() {
                   Home
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link" to="/posts">
                   All Posts
@@ -62,18 +63,20 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="/posts/new">
-                      New Post
-                    </Link>
-                  </li>
-                  <Link className="nav-link" onClick={handleSignupShow}>
-                    Signup
-                  </Link>
-                  <li>
+                    <li className="nav-item">
+                      <Link className="nav-item" to="/posts/new">
+                        New Post
+                      </Link>
+                    </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/login">
                         Login
                       </Link>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" onClick={handleSignupShow}>
+                        Signup
+                      </a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" to="/logout">
