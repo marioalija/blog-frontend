@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
-// imported posts show component
+import { Routes, Route } from "react-router-dom";
+import { About } from "./About";
+import { Signup } from "./Signup";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import axios from "axios";
-import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 
@@ -69,11 +70,18 @@ export function Content() {
 
   return (
     <div className="container">
-      <Signup />
-      <Login />
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
+        <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
+      </Routes>
+
+      <h1>WELCOME TO THE STEWIE GRIFFIN SHOW</h1>
+
       <LogoutLink />
-      <PostsNew onCreatePost={handleCreatePost} />
-      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         {/* replaced data with a component */}
         <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />

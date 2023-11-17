@@ -1,6 +1,26 @@
+import { Link } from "react-router-dom";
+import { Modal } from "./Modal";
+import { useState } from "react";
+import { Signup } from "./Signup";
+
 export function Header() {
+  const [isSignupVisible, setIsSignupVisible] = useState(false);
+
+  // opens the modal
+  const handleSignupShow = () => {
+    setIsSignupVisible(true);
+  };
+
+  //closes modal
+  const handleClose = () => {
+    setIsSignupVisible(false);
+  };
   return (
     <header>
+      <Modal show={isSignupVisible} onClose={handleClose}>
+        <Signup />
+      </Modal>
+
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
@@ -20,15 +40,16 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link to="/" className="nav-link active" aria-current="page">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/posts">
                   All Posts
-                </a>
+                </Link>
               </li>
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -41,22 +62,25 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/posts/new">
                       New Post
-                    </a>
+                    </Link>
                   </li>
+                  <Link className="nav-link" onClick={handleSignupShow}>
+                    Signup
+                  </Link>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/login">
+                        Login
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" to="/logout">
+                        Logout
+                      </a>
+                    </li>
                     <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
                   </li>
                 </ul>
               </li>
@@ -64,6 +88,7 @@ export function Header() {
                 <a className="nav-link disabled"></a>
               </li>
             </ul>
+
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">
