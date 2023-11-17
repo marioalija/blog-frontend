@@ -82,7 +82,7 @@ export function Content() {
 
       <div className="image-container">
         <h1>WELCOME TO THE STEWIE GRIFFIN SHOW</h1>
-        <image src="https://i.redd.it/0t76j6jfahub1.jpg" alt="image" />
+        <img src="https://i.redd.it/0t76j6jfahub1.jpg" alt="image" />
       </div>
 
       <LogoutLink />
