@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 export function PostsIndex(props) {
   console.log(props);
@@ -14,6 +15,7 @@ export function PostsIndex(props) {
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.body}</p>
                 <button onClick={() => props.onShowPost(post)}>More info</button>
+                <Link to={`/posts/${post.id}`}>Load Page</Link>
               </div>
             </div>
           </div>

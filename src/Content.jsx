@@ -9,7 +9,7 @@ import { Modal } from "./Modal";
 import axios from "axios";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
-import { RecipesShowPage } from "./PostsShowPage";
+import { PostsShowPage } from "./PostsShowPage";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -77,10 +77,13 @@ export function Content() {
         <Route path="/login" element={<Login />} />
         <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
         <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
-        <Route path="/recipes/:id" element={<RecipesShowPage />} />
+        <Route path="/posts/:id" element={<PostsShowPage />} />
       </Routes>
 
-      <h1>WELCOME TO THE STEWIE GRIFFIN SHOW</h1>
+      <div className="image-container">
+        <h1>WELCOME TO THE STEWIE GRIFFIN SHOW</h1>
+        <image src="https://i.redd.it/0t76j6jfahub1.jpg" alt="image" />
+      </div>
 
       <LogoutLink />
 

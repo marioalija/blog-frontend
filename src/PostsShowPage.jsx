@@ -19,7 +19,8 @@ export function PostsShowPage() {
       <h1> Post Info</h1>
       <h2>{post.title}</h2>
       <p>{post.id}</p>
-      <p>{post.Image}</p>
+      <img src={post.image} alt="" />
+      <p>{post.body}</p>
     </div>
   );
 }

@@ -24,7 +24,7 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            My Blog
+            The Stewie Show
           </a>
           <button
             className="navbar-toggler"
@@ -51,7 +51,7 @@ export function Header() {
                 </Link>
               </li>
 
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -62,31 +62,31 @@ export function Header() {
                   Dropdown
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <li className="nav-item">
-                      <Link className="nav-item" to="/posts/new">
-                        New Post
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/login">
-                        Login
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" onClick={handleSignupShow}>
-                        Signup
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" to="/logout">
-                        Logout
-                      </a>
-                    </li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                </ul>
+                  <li> */}
+              <li className="nav-item">
+                <Link className="nav-item" to="/posts/new">
+                  New Post
+                </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" onClick={handleSignupShow}>
+                  Signup
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" to="/logout">
+                  Logout
+                </a>
+              </li>
+              {/* <hr className="dropdown-divider" /> */}
+              {/* </li> */}
+              {/* </ul> */}
+              {/* </li> */}
               <li className="nav-item">
                 <a className="nav-link disabled"></a>
               </li>
