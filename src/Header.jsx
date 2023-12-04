@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Modal } from "./Modal";
 import { useState } from "react";
 import { Signup } from "./Signup";
+import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
   const [isSignupVisible, setIsSignupVisible] = useState(false);
-
   // opens the modal
   const handleSignupShow = () => {
     setIsSignupVisible(true);
@@ -15,6 +15,29 @@ export function Header() {
   const handleClose = () => {
     setIsSignupVisible(false);
   };
+  let authenticationLinks;
+  if (localStorage.jwt === undefined) {
+    authenticationLinks = (
+      <>
+        <li className="nav-item">
+          <a className="nav-link" onClick={handleSignupShow}>
+            Signup
+          </a>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">
+            Login
+          </Link>
+        </li>
+      </>
+    );
+  } else {
+    authenticationLinks = (
+      <li className="nav-item">
+        <a className="nav-link" to="/logout"></a>
+      </li>
+    );
+  }
   return (
     <header>
       <Modal show={isSignupVisible} onClose={handleClose}>
@@ -50,6 +73,19 @@ export function Header() {
                   All Posts
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-item" to="/posts/new">
+                  New Post
+                </Link>
+              </li>
+              {/* <li className="nav-item">
+                <LogoutLink className="nav-item" to="/posts/new" />
+              </li> */}
+              {/* <li className="nav-item">
+                <Link className="nav-link" to="/home">
+                  Logout
+                </Link>
+              </li> */}
 
               {/* <li className="nav-item dropdown">
                 <a
@@ -63,30 +99,29 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li> */}
-              <li className="nav-item">
-                <Link className="nav-item" to="/posts/new">
-                  New Post
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" onClick={handleSignupShow}>
-                  Signup
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" to="/logout">
-                  Logout
-                </a>
-              </li>
-              {/* <hr className="dropdown-divider" /> */}
-              {/* </li> */}
-              {/* </ul> */}
-              {/* </li> */}
+              {/* <li className="nav-item">
+                      <Link className="nav-item" to="/posts/new">
+                        New Post
+                      </Link>
+                    </li> */}
+              {/* <li className="nav-item">
+                      <Link className="nav-link" to="/login">
+                        Login
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" onClick={handleSignupShow}>
+                        Signup
+                      </a>
+                    </li>
+               */}
+              {authenticationLinks}
+              {/* LOGGED OUT JUNK */}
+
+              {/* <hr className="dropdown-divider" />
+                  </li>
+                </ul>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link disabled"></a>
               </li>
